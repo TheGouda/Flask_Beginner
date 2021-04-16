@@ -1,20 +1,16 @@
-@app.route('/reverse/<int:n>')
-def reverse(n):
+@app.route('/palindrome/<int:n>')
+def palindrome(n):
     s=0
     t=n
     while n!=0:
         a=n%10
         s=(s*10)+a
         n=n//10
-    ss={"Number":t,"reverse":s}
-    return jsonify(ss)
-@app.route('/reverse/<int:n>')
-def reverse(n):
-    s=0
-    t=n
-    while n!=0:
-        a=n%10
-        s=(s*10)+a
-        n=n//10
-    ss={"Number":t,"reverse":s}
+    if t==s:
+
+        ss={"Number":t,"reverse":s,"It is a palindrome"}
+    else:
+        
+        ss={"Number":t,"reverse":s,"It is not a palindrome"}
+    
     return jsonify(ss)

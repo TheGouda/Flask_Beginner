@@ -34,6 +34,23 @@ def reverse(n):
     ss={"Number":t,"reverse":s}
     return jsonify(ss)
 
+@app.route('/palindrome/<int:n>')
+def palindrome(n):
+    s=0
+    t=n
+    while n!=0:
+        a=n%10
+        s=(s*10)+a
+        n=n//10
+    if t==s:
+
+        ss={"Number":t,"reverse":s,"Palindrome":True}
+    else:
+        
+        ss={"Number":t,"reverse":s,"Palindrome":False}
+    
+    return jsonify(ss)
+
 
 @app.route('/hello/<string:s>')
 def hello(s):
