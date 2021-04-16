@@ -39,6 +39,14 @@ def add(a,b):
     }
     return jsonify(res)
 
+@app.route('/sub/<int:a>/<int:b>')
+def diff(a,b):
+    c=a-b
+    res={
+        "First number":a , "Second number":b , "Subtration":c
+    }
+    return jsonify(res)
+
 @app.route('/prime/<int:n>')
 def prime(n):
     f=False
