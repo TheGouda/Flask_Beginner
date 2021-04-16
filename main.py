@@ -31,12 +31,13 @@ def hello(s):
     }
     return jsonify(res)
 
-@app.route('/add/a/<int:a>/b/<int:b>')
+@app.route('/add/<int:a>/<int:b>')
 def add(a,b):
     c=a+b
     res={
         "First number":a , "Second number":b , "Sum":c
     }
+    return jsonify(res)
 
 @app.route('/prime/<int:n>')
 def prime(n):
