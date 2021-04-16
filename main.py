@@ -24,7 +24,6 @@ def armstrong(n):
     return jsonify(res)
 
 
-
 @app.route('/hello/<string:s>')
 def hello(s):
     res={
